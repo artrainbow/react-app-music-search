@@ -4,30 +4,30 @@ import ReactDOM from 'react-dom';
 import Service from '../../services/service';
 
 class Main extends Component {
-  constructor(props) {
+  constructor() {
     super();
-    this.service = Service.getData('https://api.mcmakler.de/v1/advertisements');
+    Service.getData();
   }
 
-
-  get getData() {
-    return this.service.then((data) => {
-      console.log(data.data.slice(0, 10));
-    });
-  }
 
   render() {
     return (
       <div>
         Hello!
-        {JSON.stringify(getData)}
+        {setTimeout(function () {
+          return Service.data;
+        }, 2000)}
       </div>
     );
   }
 }
 
 
-if (document.getElementById('create-article-form')) ReactDOM.render(
-  <Main/>, document.getElementById('create-article-form'));
+// setTimeout(function () {
+//   console.log(Service.data);
+// }, 5000);
+if (document.getElementById('create-article-form')) {
+  ReactDOM.render(<Main/>, document.getElementById('create-article-form'));
+}
 
 export default Main;
