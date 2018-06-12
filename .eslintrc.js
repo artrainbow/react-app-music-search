@@ -1,5 +1,9 @@
 module.exports = {
-  "extends": "airbnb",
+  //"extends": "airbnb",
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
   "parserOptions": {
     "ecmaVersion": 6,
     "sourceType": "module",
@@ -8,15 +12,20 @@ module.exports = {
     }
   },
   "rules": {
-    "semi": 2,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "jsx-a11y/label-has-for": [ 2, {
-      "components": [ "Label" ],
-      "required": {
-        "every": [ "nesting", "id" ]
-      },
-      "allowChildren": false
-    }]
+    // "semi": 2,
+    // "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    // "jsx-a11y/label-has-for": [ 2, {
+    //   "components": [ "Label" ],
+    //   "required": {
+    //     "every": [ "nesting", "id" ]
+    //   },
+    //   "allowChildren": false
+    // }]
+
+
+    "no-set-state": "off",
+    'no-console': 'off',
+
   },
   "env": {
     "browser": true,

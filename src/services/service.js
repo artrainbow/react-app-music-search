@@ -1,15 +1,10 @@
-class Service {
-  constructor() {
-    this.data = {};
-  }
+const arr =
+  {
+    advertisementAssets: {
+      0: {a:1},
+      1: {b:2},
+      2: {c:3}
+    }
+  };
 
-  static getData() {
-    return fetch('https://api.mcmakler.de/v1/advertisements')
-      .then(res => res.json())
-      .then((data) => {
-        this.data = data.data.slice(0, 10);
-      });
-  }
-}
-
-export default Service;
+console.log(arr.advertisementAssets['0'])
