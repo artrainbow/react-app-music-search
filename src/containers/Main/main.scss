@@ -1,0 +1,28 @@
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+
+
+  .container {
+    .container-item {
+      .container-item-wrapper {
+        padding-left: 30px;
+        padding-bottom: 30px;
+        padding-right: 25px;
+        .card {
+          border: 1px solid lightgray;
+          border-radius: 5px;
+        }
+        img {
+          width: 100%;
+          //height: 100%;
+        }
+      }
+    }
+  }
+
+}

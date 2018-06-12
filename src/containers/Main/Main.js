@@ -1,7 +1,16 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import './main.scss';
+
+const classes = {
+  container: 'container',
+  containerItem: 'container-item',
+  containerItemWrapper: 'container-item-wrapper',
+  card: 'card',
+};
 
 
 class Main extends Component {
@@ -18,33 +27,37 @@ class Main extends Component {
       .then((data) => {
         const item = data.data.map(item => {
           return (
-            <Grid key={item._id.$id} item xs={3}>
-              <div>{(item.advertisementPrice.sellPrice) ? 'zu verkaufen' : 'mieten'}</div>
-              <img src={
-                (item.advertisementAssets['0']) ? item.advertisementAssets['0'].advertisementThumbnails.inventory_m.url : item.advertisementAssets.advertisementThumbnails.inventory_m.url
-              }/>
-              <div>{item.title}</div>
-              <div>
-                <span>{item.realestateSummary.address.postalCode}</span>
-                <span>{item.realestateSummary.address.city}</span>
-                <span>/</span>
-                <span>{item.realestateSummary.address.street}</span>
+            <Grid key={item._id.$id} item xs={4} className={classes.containerItem}>
+              <div className={classes.containerItemWrapper}>
+                <div className="card">
+                  <div>{(item.advertisementPrice.sellPrice) ? 'zu verkaufen' : 'mieten'}</div>
+                  <img src={
+                    (item.advertisementAssets['0']) ? item.advertisementAssets['0'].advertisementThumbnails.inventory_m.url : item.advertisementAssets.advertisementThumbnails.inventory_m.url
+                  }/>
+                  <div>{item.title}</div>
+                  <div>
+                    <span>{item.realestateSummary.address.postalCode}</span>
+                    <span>{item.realestateSummary.address.city}</span>
+                    <span>/</span>
+                    <span>{item.realestateSummary.address.street}</span>
+                  </div>
+                  <div>
+                    <span>{(item.advertisementPrice.sellPrice) ? item.advertisementPrice.sellPrice : item.advertisementPrice.baseRent}</span>
+                    <span>€</span>
+                  </div>
+                  <div>
+                    <span>{item.realestateSummary.numberOfRooms}</span>
+                    <span>Zimmer</span>
+                    <span>|</span>
+                    <span>ab</span>
+                    <span>{item.realestateSummary.space.toFixed(0)}</span>
+                    <span>m<sup>2</sup></span>
+                  </div>
+                  <Button variant="contained" color="primary">
+                    Hello World
+                  </Button>
+                </div>
               </div>
-              <div>
-                <span>{(item.advertisementPrice.sellPrice) ? item.advertisementPrice.sellPrice : item.advertisementPrice.baseRent}</span>
-                <span>€</span>
-              </div>
-              <div>
-                <span>{item.realestateSummary.numberOfRooms}</span>
-                <span>Zimmer</span>
-                <span>|</span>
-                <span>ab</span>
-                <span>{item.realestateSummary.space.toFixed(0)}</span>
-                <span>m<sup>2</sup></span>
-              </div>
-              <Button variant="contained" color="primary">
-                Hello World
-              </Button>
             </Grid>
           )
         });
@@ -57,7 +70,7 @@ class Main extends Component {
 
   render() {
     return (
-      <Grid container className={'container'} spacing={40}>
+      <Grid container className={classes.container} spacing={0}>
         {this.state.item}
       </Grid>
     );
