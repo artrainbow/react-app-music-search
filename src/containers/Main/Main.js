@@ -46,6 +46,7 @@ class Main extends Component {
                                   padding: '8px 10px 8px 10px',
                                   fontWeight: 600,
                                   fontSize: '100%',
+                                  fontFamily: 'MSlondonRegular',
                                   color: 'rgba(0, 0, 0, 0.3)'
                                 }}>
                       {item.advertisementPrice.sellPrice ? 'Kaufen' : 'Mieten'}
@@ -59,14 +60,12 @@ class Main extends Component {
                       }
                       title={item.title}
                     />
-                    <CardContent
-                      style={{
-                        padding: '45px 50px 20px 50px',
-                      }}>
+                    <CardContent style={{padding: '45px 50px 20px 50px'}}>
                       <Typography gutterBottom variant="headline" component="h2"
                                   style={{
                                     fontWeight: 600,
                                     fontSize: 20,
+                                    fontFamily: 'MSlondonRegular',
                                     height: 52,
                                     color: 'rgba(0, 0, 0, 0.6)',
                                     overflow: 'hidden',
@@ -78,6 +77,7 @@ class Main extends Component {
                                     paddingTop: 10,
                                     color: 'rgba(0, 0, 0, 0.3)',
                                     fontWeight: 800,
+                                    fontFamily: 'MSlondonRegular',
                                     fontSize: 16,
                                     height: 24,
                                     overflow: 'hidden',
@@ -92,6 +92,7 @@ class Main extends Component {
                                     marginTop: 56,
                                     color: 'rgba(0, 0, 0, 0.6)',
                                     fontWeight: 700,
+                                    fontFamily: 'MSlondonRegular',
                                     fontSize: 22,
                                     float: 'left',
                                   }}>
@@ -103,6 +104,7 @@ class Main extends Component {
                                     marginTop: 52,
                                     color: 'rgba(0, 0, 0, 0.6)',
                                     fontSize: 19,
+                                    fontFamily: 'MSlondonRegular',
                                     float: 'right',
                                   }}>
                         {item.realestateSummary.numberOfRooms}
@@ -118,14 +120,20 @@ class Main extends Component {
                           }}/>
                         <span>ab </span>
                         {item.realestateSummary.space.toFixed(0)}
-                        <span> m<sup style={{fontSize: '60%', fontWeight: 600}}>2</sup></span>
+                        <span> m<sup
+                          style={{
+                            fontSize: '60%',
+                            fontWeight: 600
+                          }}>
+                          2</sup>
+                        </span>
                       </Typography>
                     </CardContent>
                   </Card>
                 </div>
               </div>
             </Grid>
-          )
+          );
         });
 
         this.setState({
@@ -144,6 +152,5 @@ class Main extends Component {
 }
 
 ReactDOM.render(<Main/>, document.getElementById('root'));
-
 
 export default Main;
