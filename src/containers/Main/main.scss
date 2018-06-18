@@ -1,6 +1,12 @@
+@import "fonts.sass";
+
 body {
   margin: 0;
   padding: 0;
+}
+
+* {
+  font-family: 'MSlondonRegular';
 }
 
 #root {
@@ -12,11 +18,11 @@ body {
         padding-bottom: 15px;
         padding-right: 25px;
 
-        .card{
+        .card {
           height: 575px;
           cursor: pointer;
         }
-        .media{
+        .media {
           height: 300px;
         }
       }
