@@ -26,7 +26,7 @@ class Main extends Component {
   }
 
   componentDidMount() {
-    fetch('https://api.mcmakler.de/v1/advertisements')
+    fetch('https://cors.io/?https://api.mcmakler.de/v1/advertisements')
       .then(res => res.json())
       .then((data) => {
         const item = data.data.map(item => {
