@@ -71,6 +71,10 @@ class Main extends Component {
                 <Grid container
                       style={{
                           marginTop: 10,
+                          position: 'sticky',
+                          top: 0,
+                          backgroundColor: 'white',
+                          zIndex: 1,
                       }}>
                     <FormControl
                         style={{
@@ -144,7 +148,15 @@ class Items extends Main {
                         <div className={classes.containerItemWrapper}>
                             <div>
                                 <Card className={classes.card}>
-                                    <div id={'eq' + item.id} />
+                                    <div id={'eq' + item.id}>
+                                        <div className="square">
+                                            <span className="bar2 b1"/>
+                                            <span className="bar1 b2"/>
+                                            <span className="bar2 b3"/>
+                                            <span className="bar1 b4"/>
+                                            <span className="bar2 b5"/>
+                                        </div>
+                                    </div>
                                     <CardMedia
                                         style={{
                                             display: 'flex',

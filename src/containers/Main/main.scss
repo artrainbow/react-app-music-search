@@ -46,8 +46,8 @@ body {
             width: 70px;
             height: 70px;
             transition: all .125s ease-out;
-            -webkit-filter: drop-shadow( 0 0 3px rgba(0, 0, 0, .5));
-            filter: drop-shadow( 0 0 3px rgba(0, 0, 0, .5));
+            -webkit-filter: drop-shadow(0 0 3px rgba(0, 0, 0, .5));
+            filter: drop-shadow(0 0 3px rgba(0, 0, 0, .5));
 
             &:hover {
               width: 75px;
@@ -67,15 +67,57 @@ body {
           }
 
           .equalizer {
-            position: absolute;
-            margin: 30px;
-            width: 100px;
-            height: 55px;
-            -webkit-animation: equalize 2s infinite;
-            animation: equalize 2s infinite;
-            background: linear-gradient(0deg, #008000, #ff0, #f00) -38px 0 / 16px 100px,linear-gradient(0deg, #111, #111) -20px -20px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) -18px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 0px -51px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 2px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 20px -97px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 22px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 40px -63px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 42px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 60px -65px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 62px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 80px -34px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 82px 0 / 16px 100px;
-            background-repeat: no-repeat;
-            zoom: .2;
+            .square {
+              position: absolute;
+              transform: rotateX(180deg);
+              height: 400px;
+              width: 400px;
+              margin: 100px;
+              padding: 40px;
+              background-color: #ffffff;
+              border-radius: 35px;
+              text-align: center;
+              box-shadow: 0 0 70px 0 black;
+              zoom: .08;
+            }
+
+            .bar1 {
+              margin: 2%;
+              padding-left: 50px;
+              border-radius: 25px;
+              background-color: rgba(229, 3, 0, .5);
+              animation-duration: 1.5s;
+              animation-iteration-count: infinite;
+            }
+
+            .bar2 {
+              margin: 2%;
+              padding-left: 50px;
+              border-radius: 25px;
+              background-color: rgb(229, 3, 0);
+              animation-duration: 1.5s;
+              animation-iteration-count: infinite;
+            }
+
+            .b1 {
+              animation-name: b1;
+            }
+
+            .b2 {
+              animation-name: b2;
+            }
+
+            .b3 {
+              animation-name: b3;
+            }
+
+            .b4 {
+              animation-name: b4;
+            }
+
+            .b5 {
+              animation-name: b5;
+            }
           }
         }
         .media {
@@ -94,45 +136,138 @@ body {
     transform: rotate(360deg);
   }
 }
-@keyframes equalize {
-  0%, 100% {
-    background: linear-gradient(0deg, #008000, #ff0, #f00) -38px 0 / 16px 100px,linear-gradient(0deg, #111, #111) -20px -23px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) -18px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 0px -93px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 2px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 20px -85px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 22px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 40px -30px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 42px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 60px -24px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 62px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 80px -91px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 82px 0 / 16px 100px;
-    background-repeat: no-repeat;
+
+@keyframes b1 {
+  0% {
+    padding-bottom: 10%;
   }
-  10% {
-    background: linear-gradient(0deg, #008000, #ff0, #f00) -38px 0 / 16px 100px,linear-gradient(0deg, #111, #111) -20px -82px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) -18px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 0px -56px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 2px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 20px -95px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 22px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 40px -41px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 42px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 60px -36px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 62px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 80px -80px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 82px 0 / 16px 100px;
-    background-repeat: no-repeat;
+  16% {
+    padding-bottom: 30%;
   }
-  20% {
-    background: linear-gradient(0deg, #008000, #ff0, #f00) -38px 0 / 16px 100px,linear-gradient(0deg, #111, #111) -20px -59px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) -18px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 0px -85px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 2px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 20px -59px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 22px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 40px -91px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 42px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 60px -96px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 62px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 80px -69px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 82px 0 / 16px 100px;
-    background-repeat: no-repeat;
+  36% {
+    padding-bottom: 20%;
   }
-  30% {
-    background: linear-gradient(0deg, #008000, #ff0, #f00) -38px 0 / 16px 100px,linear-gradient(0deg, #111, #111) -20px -56px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) -18px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 0px -76px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 2px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 20px -27px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 22px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 40px -78px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 42px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 60px -20px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 62px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 80px -55px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 82px 0 / 16px 100px;
-    background-repeat: no-repeat;
+  52% {
+    padding-bottom: 11%
   }
-  40% {
-    background: linear-gradient(0deg, #008000, #ff0, #f00) -38px 0 / 16px 100px,linear-gradient(0deg, #111, #111) -20px -74px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) -18px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 0px -94px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 2px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 20px -66px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 22px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 40px -75px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 42px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 60px -84px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 62px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 80px -93px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 82px 0 / 16px 100px;
-    background-repeat: no-repeat;
+  68% {
+    padding-bottom: 25%
   }
-  50% {
-    background: linear-gradient(0deg, #008000, #ff0, #f00) -38px 0 / 16px 100px,linear-gradient(0deg, #111, #111) -20px -97px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) -18px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 0px -79px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 2px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 20px -56px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 22px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 40px -58px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 42px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 60px -22px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 62px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 80px -98px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 82px 0 / 16px 100px;
-    background-repeat: no-repeat;
+  68% {
+    padding-bottom: 15%
   }
-  60% {
-    background: linear-gradient(0deg, #008000, #ff0, #f00) -38px 0 / 16px 100px,linear-gradient(0deg, #111, #111) -20px -54px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) -18px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 0px -31px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 2px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 20px -22px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 22px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 40px -92px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 42px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 60px -45px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 62px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 80px -75px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 82px 0 / 16px 100px;
-    background-repeat: no-repeat;
+  84% {
+    padding-bottom: 17%
   }
-  70% {
-    background: linear-gradient(0deg, #008000, #ff0, #f00) -38px 0 / 16px 100px,linear-gradient(0deg, #111, #111) -20px -32px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) -18px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 0px -46px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 2px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 20px -91px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 22px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 40px -67px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 42px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 60px -23px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 62px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 80px -52px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 82px 0 / 16px 100px;
-    background-repeat: no-repeat;
+  100% {
+    padding-bottom: 10%
   }
-  80% {
-    background: linear-gradient(0deg, #008000, #ff0, #f00) -38px 0 / 16px 100px,linear-gradient(0deg, #111, #111) -20px -82px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) -18px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 0px -86px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 2px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 20px -46px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 22px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 40px -92px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 42px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 60px -42px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 62px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 80px -41px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 82px 0 / 16px 100px;
-    background-repeat: no-repeat;
+}
+
+@keyframes b2 {
+  0% {
+    padding-bottom: 20%;
   }
-  90% {
-    background: linear-gradient(0deg, #008000, #ff0, #f00) -38px 0 / 16px 100px,linear-gradient(0deg, #111, #111) -20px -93px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) -18px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 0px -79px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 2px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 20px -78px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 22px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 40px -64px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 42px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 60px -70px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 62px 0 / 16px 100px,linear-gradient(0deg, #111, #111) 80px -45px / 20px 100px,linear-gradient(0deg, #008000, #ff0, #f00) 82px 0 / 16px 100px;
-    background-repeat: no-repeat;
+  16% {
+    padding-bottom: 50%;
+  }
+  36% {
+    padding-bottom: 25%;
+  }
+  52% {
+    padding-bottom: 40%
+  }
+  68% {
+    padding-bottom: 15%
+  }
+  68% {
+    padding-bottom: 35%
+  }
+  84% {
+    padding-bottom: 45%
+  }
+  100% {
+    padding-bottom: 20%
+  }
+}
+
+@keyframes b3 {
+  0% {
+    padding-bottom: 5%;
+  }
+  16% {
+    padding-bottom: 65%;
+  }
+  36% {
+    padding-bottom: 40%;
+  }
+  52% {
+    padding-bottom: 15%
+  }
+  68% {
+    padding-bottom: 35%
+  }
+  68% {
+    padding-bottom: 50%
+  }
+  84% {
+    padding-bottom: 60%
+  }
+  100% {
+    padding-bottom: 5%
+  }
+}
+
+@keyframes b4 {
+  0% {
+    padding-bottom: 5%
+  }
+  16% {
+    padding-bottom: 20%
+  }
+  36% {
+    padding-bottom: 10%
+  }
+  52% {
+    padding-bottom: 40%
+  }
+  68% {
+    padding-bottom: 20%
+  }
+  68% {
+    padding-bottom: 40%
+  }
+  84% {
+    padding-bottom: 55%
+  }
+  100% {
+    padding-bottom: 5%
+  }
+}
+
+@keyframes b5 {
+  0% {
+    padding-bottom: 15%
+  }
+  16% {
+    padding-bottom: 40%
+  }
+  36% {
+    padding-bottom: 25%
+  }
+  52% {
+    padding-bottom: 50%
+  }
+  68% {
+    padding-bottom: 65%
+  }
+  68% {
+    padding-bottom: 30%
+  }
+  84% {
+    padding-bottom: 55%
+  }
+  100% {
+    padding-bottom: 15%
   }
 }
