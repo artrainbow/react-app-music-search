@@ -101,6 +101,17 @@ class Items extends Main {
         document.getElementById(id).removeAttribute('class');
     }
 
+    static addEqualizer(id) {
+        [...document.getElementsByClassName('equalizer')].forEach((item) => {
+            item.classList.remove('equalizer');
+        });
+        document.getElementById('eq' + id).classList.add('equalizer');
+    }
+
+    static removeEqualizer(id) {
+        document.getElementById('eq' + id).classList.remove('equalizer');
+    }
+
     render() {
         const {
             isFetched,
@@ -108,19 +119,22 @@ class Items extends Main {
         } = this.state;
 
         if (isFetched && this.props.data) {
-            const play = (url) => {
+            const play = (url, itemId) => {
                 if (this.playerData.src === url) {
                     if (isPlaying) {
                         this.playerData.pause();
                         this.setState({isPlaying: false});
+                        Items.removeEqualizer(itemId);
                     } else {
                         this.playerData.play();
                         this.setState({isPlaying: true});
+                        Items.addEqualizer(itemId);
                     }
                 } else {
                     this.playerData.src = url;
                     this.playerData.play();
                     this.setState({isPlaying: true});
+                    Items.addEqualizer(itemId);
                 }
             };
 
@@ -130,6 +144,7 @@ class Items extends Main {
                         <div className={classes.containerItemWrapper}>
                             <div>
                                 <Card className={classes.card}>
+                                    <div id={'eq' + item.id} />
                                     <CardMedia
                                         style={{
                                             display: 'flex',
@@ -141,7 +156,7 @@ class Items extends Main {
                                         title={item.title}>
                                         <SvgIcon
                                             onClick={() => {
-                                                play(item.preview);
+                                                play(item.preview, item.id);
                                             }}
                                         >
                                             <path
