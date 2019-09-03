@@ -156,27 +156,10 @@ class Items extends Main {
                                         <div id={item.id} className={'spinner'}/>
                                     </CardMedia>
                                     <CardContent style={{padding: '30'}}>
-                                        <Typography gutterBottom variant="headline" component="h1"
-                                                    style={{
-                                                        fontWeight: 600,
-                                                        fontSize: 20,
-                                                        fontFamily: 'MSlondonRegular',
-                                                        height: 52,
-                                                        color: 'rgba(0, 0, 0, 0.6)',
-                                                        overflow: 'hidden',
-                                                    }}>
+                                        <Typography gutterBottom variant="headline" component="h1">
                                             {item.title}
                                         </Typography>
-                                        <Typography component="h2"
-                                                    style={{
-                                                        marginTop: 5,
-                                                        color: 'rgba(0, 0, 0, 0.3)',
-                                                        fontWeight: 800,
-                                                        fontFamily: 'MSlondonRegular',
-                                                        fontSize: 15,
-                                                        height: 24,
-                                                        overflow: 'hidden',
-                                                    }}>
+                                        <Typography component="h2">
                                             {item.album.title}
                                         </Typography>
                                         <Typography component="span"
