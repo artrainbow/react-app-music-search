@@ -1,4 +1,4 @@
-# React Application demonstrates PLP
+# React Application music search page
 
 #### Stack:
 - Node 6.9.1
